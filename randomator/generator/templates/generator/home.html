@@ -1,0 +1,17 @@
+{% extends 'generator/base.html' %}
+
+{% block content %}
+
+<h1> Welcome To Password Generator! </h1>
+
+{% if user.is_authenticated %}
+	<p>Name: {{user.first_name}} {{ user.last_name}}</p>
+	<p>Username: {{user.username}}</p>
+
+	<p>Email: {{user.email}}</p>
+
+	<a href="{% url 'generate_password' %}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Generate Password</a>
+
+{% endif %}
+
+{% endblock %}

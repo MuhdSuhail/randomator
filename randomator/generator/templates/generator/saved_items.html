@@ -1,0 +1,14 @@
+{% extends 'generator/base.html' %}
+{% block content %}
+
+  <h5 class="alert alert-success">Your Saved Passwords are:</h5>
+  {% if data %}
+    <ul>
+    {% for pass_data in data %}
+        <li><a>{{ pass_data.description }}: {{pass_data.password}}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}
+{% endblock %}
